@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.elkarte.net/site/package-info">
+<package-info xmlns="http://www.elkarte.net/site/package-info" xmlns:elk="http://www.elkarte.net/">
+	<name>Video bbCode</name>
+	<id>frenzie:videobbcode</id>
+	<type>modification</type>
+	<version>1.0</version>
+
+	<install for"1.0 - 1.0.99">
+		<readme type="file" parsebbc="true">readme.txt</readme>
+		<require-file name="video-bbcode.php" destination="SOURCEDIR/addons" />
+		<require-file name="video.png" destination="IMAGESDIR/bbc" />
+		<hook hook="integrate_bbc_codes" file="SOURCEDIR/addons/video-bbcode.php" function="video_bbcode" />
+		<!--<hook hook="integrate_bbc_buttons" file="SOURCEDIR/addons/video-bbcode.php" function="video_bbcode_button" />-->
+	</install>
+	<uninstall for="1.0 - 1.0.99">
+		<hook reverse="true" hook="integrate_bbc_codes" file="SOURCEDIR/addons/video-bbcode.php" function="video_bbcode" />
+		<!--<hook reverse="true" hook="integrate_bbc_buttons" file="SOURCEDIR/addons/video-bbcode.php" function="video_bbcode_button" />-->
+		<remove-file name="SOURCEDIR/addons/video-bbcode.php" />
+		<remove-file name="IMAGESDIR/bbc/video.png" />
+	</uninstall>
+
+</package-info>
