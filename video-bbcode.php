@@ -48,12 +48,12 @@ function video_bbcode(&$codes, &$no_autolink_tags, &$itemcodes)
 					$youtube_link_url .= '?start=' . $video_start_at_seconds;
 				}
 				
-				$data = '<iframe width="560" height="315" src="' . $youtube_embed_url . '" frameborder="0" allowfullscreen><a href="' . $youtube_link_url . '" target="_blank" class="new_win">' . $youtube_link_url . '</a></iframe>';
+				$data = '<iframe width="640" height="385" style="max-width:98%; max-height:auto;" src="' . $youtube_embed_url . '" frameborder="0" allowfullscreen><a href="' . $youtube_link_url . '" target="_blank" class="new_win">' . $youtube_link_url . '</a></iframe>';
 			}
 			// partially adapted from http://stackoverflow.com/a/13286930
 			else if (preg_match("/^(?:http(?:s)?:\/\/)?(?:www\.)?vimeo.com\/(?:channels\/|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|)(\d+)(?:$|\/|\?)/", $data, $matches))
 			{
-				$data = '<iframe src="//player.vimeo.com/video/' . $matches[3] . '" width="560" height="315" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+				$data = '<iframe width="640" height="385" style="max-width:98%; max-height:auto;" src="//player.vimeo.com/video/' . $matches[3] . '" frameborder="0" allowfullscreen></iframe>';
 			}
 			else
 			{
@@ -76,6 +76,3 @@ function video_bbcode_button(&$buttons)
 		'after' => '[/video]',
 	);
 }
-
-
-?>
